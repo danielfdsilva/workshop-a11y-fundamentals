@@ -29,7 +29,7 @@ Notes:
       </nav>
 
       <!-- 💡 2/4 Here's a important feature of the page. It's worth of a landmark -->
-      <div>
+      <div role="region" aria-label="Search">
         <input type="text" placeholder="Search...">
       </div>
     </header>
@@ -46,15 +46,15 @@ Notes:
         <ul class="list">
           <li>
             <span aria-hidden="true">🇫🇷</span>
-            <span>Bonjour</span> - French
+            <span lang="fr-FR">Bonjour</span> - French
           </li>
           <li>
             <span aria-hidden="true">🇵🇹</span>
-            <span>Bom dia</span> - Portuguese (Portugal)
+            <span lang="pt-PT">Bom dia</span> - Portuguese (Portugal)
           </li>
           <li>
             <span aria-hidden="true">🇹🇷</span>
-            <span>Günaydin</span> - Turkish
+            <span lang="tr-TR">Günaydin</span> - Turkish
           </li>
         </ul>
 
@@ -64,7 +64,7 @@ Notes:
     </main>
 
     <!-- 💡 3/4 We can create custom landmarks too -->
-    <div class="block">
+    <div class="block" role="region" aria-label="Discussion">
       <i>Nobody left a comment yet...</i>
     </div>
 

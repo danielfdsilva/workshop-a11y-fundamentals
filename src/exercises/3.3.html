@@ -37,8 +37,8 @@ Notes:
         <label for="nickname" class="field-txt">
           Nickname <span class="u-danger">*</span>
         </label>
-        <input id="nickname" class="js-fieldNickname" type="text">
-        <span class="field-error">
+        <input id="nickname" class="js-fieldNickname" type="text" aria-required="true" aria-describedby="fieldNickname-error">
+        <span class="field-error" aria-live="assertive" id="fieldNickname-error">
           <!-- text added by JS -->
         </span>
       </div>
@@ -47,8 +47,8 @@ Notes:
         Case #2 - Group checkbox/radio
         - 💡 1/1 Related inputs must be grouped. Use <fieldset> and <legend> for that.
         -->
-      <div class="field">
-        <span class="field-txt">Favorite theme</span>
+      <fieldset class="field">
+        <legend class="field-txt">Favorite theme</legend>
         <label class="inputRadio">
           <input type="radio" name="theme" value="dark">
           <span>Dark</span>
@@ -61,7 +61,7 @@ Notes:
           <input type="radio" name="theme" value="hum">
           <span>It depends</span>
         </label>
-      </div>
+      </fieldset>
 
       <!-- Case #3 - Numeric inputs
           (all good for now, skip to Case #4)-->
@@ -69,7 +69,7 @@ Notes:
         <label class="field-txt" for="firstPC">
           Year of your first computer
         </label>
-        <input type="number" id="firstPC" class="js-fieldYear">
+        <input type="text" inputmode="numeric" pattern="^[0-9.]*$" id="firstPC" class="js-fieldYear">
       </div>
 
       <!-- 
@@ -79,9 +79,9 @@ Notes:
       -->
       <div class="field">
         <label for="uPass" class="field-txt">Worst password ever</label>
-        <input type="password" id="uPass" class="js-secretInput">
+        <input type="password" id="uPass" class="js-secretInput" aria-describedby="uPassDesc">
         <button class="js-secretBtn" aria-pressed="false" aria-label="Show password" type="button">👀</button>
-        <span class="field-tip">
+        <span class="field-tip" id="uPassDesc">
           The password usually is dumb and short.
         </span>
       </div>
@@ -94,20 +94,20 @@ Notes:
           How would you solve this?
           🍀 aria-labelledby="" can accept multiple ids!
         -->
-        <span class="u-block">
+        <label>
+          <input type="checkbox" aria-labelledby="agreeDesc" /> I agree with this sentence.
+        </label>
+        <span class="u-block" id="agreeDesc">
           Caring about <a href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">web
             accessibility</a> is my duty as web creator.
         </span>
-        <label>
-          <input type="checkbox" /> I agree with this sentence.
-        </label>
       </div>
 
       <div class="form-footer">
         <p class="formMsg js-formFeedback"></p>
         <!-- 💡 The text "Save" is a little unclear out of context. Save what?
           Be mindful about writing specific action texts for buttons. -->
-        <button class="btn btnPrimary js-btnSubmit" type="submit">Save</button>
+        <button class="btn btnPrimary js-btnSubmit" type="submit" aria-label="Save profile form">Save</button>
       </div>
     </form>
   </main>
@@ -183,7 +183,7 @@ Notes:
       elFieldNickname.nextElementSibling.style.display = hasError ? 'block' : 'none';
 
       // 💡 #1-3/3 Uncomment to update the aria-invalid attribute
-      // field.setAttribute('aria-invalid', hasError)
+      field.setAttribute('aria-invalid', hasError)
 
       if (hasError) {
         // Listen for future field changes...

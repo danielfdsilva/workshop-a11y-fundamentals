@@ -7,12 +7,19 @@
 
 .header-tag {
   margin: 0;
+  order: -1;
 }
 
 /* 💡 Bonus #2: Add the needed CSS to the class below: */
 /* Note: This class is the same as ".sr-only" during the next exercises */
 .visually-hidden {
-  /* ... */
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 /*  ----------------------------------------- *\

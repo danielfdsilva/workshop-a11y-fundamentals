@@ -19,6 +19,7 @@
 
 <body id="body">
   <!-- 💡 Create the skip link here -->
+  <a href="#main" class="skipLink">Skip to main content</a>
 
   <div class="content">
     <header>
@@ -32,7 +33,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
       <h1 class="title-xl">
         Navigation shortcuts
       </h1>
@@ -55,7 +56,7 @@
       <section>
         <!-- 💡 BONUS #2 -->
         <!-- #2 1/2 On button click, scroll (and focus) to this title -->
-        <h2 class="listTitle js-title">A list of things</h2>
+        <h2 class="listTitle js-title" tabindex="-1">A list of things</h2>
         <p>
           Learn more about <a class="link"
             href="https://ashleemboyer.com/blog/accessible-smooth-scroll-to-top-buttons-with-little-code">accessible
@@ -109,7 +110,7 @@
           <li>Thing 44</li>
           <li>Thing 45</li>
           <li>Thing 46</li>
-          <li>Thing 47</li>
+          <li>Thing 47</li> 
           <li>Thing 48</li>
           <li>Thing 49</li>
           <li>Thing 50</li>
@@ -140,6 +141,9 @@
 
             // 💡 #2 2/2 Focus the elTitle using the .focus() method.
             // ...
+            elTitle.focus({
+              preventScroll: true
+            });
           })
         </script>
       </section>

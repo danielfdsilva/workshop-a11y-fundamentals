@@ -86,14 +86,14 @@ function Exercise() {
           dynamic content is announced by assistive technologies. */}
 
           {/* Loading state */}
-          {isLoadingProducts && <p>Loading products...</p>}
+          {isLoadingProducts && <p aria-live='polite'>Loading products...</p>}
 
           {/* Error state */}
-          {productsError && <p>{productsError}</p>}
+          {productsError && <p aria-live='assertive'>{productsError}</p>}
 
           {/* Products list */}
           {products.length > 0 && isProductsOkay && (
-            <div>
+            <div aria-live='assertive'>
               <ul>
                 {products.map((product) => (
                   <li key={product.id}>Product {product.id}</li>

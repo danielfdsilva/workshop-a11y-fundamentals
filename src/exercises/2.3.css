@@ -7,11 +7,29 @@
   background-color: #fff;
   padding: 8px;
   /* 💡 Complete the skipLink */
-  /* ... */
+}
+
+.skipLink:not(:focus) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.skipLink:focus {
+  /* link styles when it's focused */
+  box-shadow: var(--theme-focus_shadow);  
+}
+
+#main:focus {
+  outline: none;
 }
 
 /* 💡 Bonus #1 */
-.your-selector-here {
+:target {
   /* Here's a pre-built animation for you */
   animation: ring 1500ms;
 }

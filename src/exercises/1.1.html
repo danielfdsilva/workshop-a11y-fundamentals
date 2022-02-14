@@ -25,41 +25,41 @@ Notes:
   <div>
     <header>
       <!-- 💡 This looks like a list of links for the website navigation -->
-      <div class="company-links">
+      <nav class="company-links">
         <a href="#fake" class="link">Home</a>
         <a href="#fake" class="link">All plants</a>
         <a href="#fake" class="link">Login</a>
-      </div>
+      </nav>
     </header>
 
     <main class="content">
       <div class="g-card">
 
         <div class="header">
-          <span class="header-tag tagSecondary">On Sale</span>
           <!-- 💡 Headings are a critical part of semantics.
             Every page must have one h1 heaing -->
-          <div class="title-xl header-plantName">
+          <h1 class="title-xl header-plantName">
             Monstera Deliciosa
-          </div>
+          </h1>
+          <span class="header-tag tagSecondary">On Sale</span>
         </div>
 
         <div class="info">
           <!-- 💡 Does this look like a type of list? -->
-          <div class="topic info-part">
-            <span class="topic-item">
+          <ul class="topic info-part">
+            <li class="topic-item">
               <span class="topic-key">Family</span>
               <span class="topic-value title-lg">Araceae</span>
-            </span>
-            <span class="topic-item">
+            </li>
+            <li class="topic-item">
               <span class="topic-key">Temperature</span>
               <span class="topic-value title-lg">20ºC</span>
-            </span>
-            <span class="topic-item">
+            </li>
+            <li class="topic-item">
               <span class="topic-key">Water</span>
               <span class="topic-value title-lg">1/week</span>
-            </span>
-          </div>
+            </li>
+          </ul>
 
           <div class="media info-part">
             <img class="media-img" src="../assets/imgs/monstera.png" alt="a plant in a vase">
@@ -75,16 +75,16 @@ Notes:
           <div class="details-part">
             <div class="price">
               <span class="price-original">
-                $40.00
+                <span class="visually-hidden">Original price:</span> $40.00
               </span>
               <!-- 💡 This may look like a "title-h2", but semantically
                 it's not a title, isn't it? It's just a "normal text" -->
-              <h2 class="price-final title-h2">
-                $30.00
-              </h2>
+              <span class="price-final title-h2">
+                <span class="visually-hidden">Discount price:</span> $30.00
+              </span>
             </div>
             <!-- 💡 This element is clickable, what better element could it be? -->
-            <div class="btn btnPrimary js-addToCart">Add to cart</div>
+            <button class="btn btnPrimary js-addToCart">Add to cart</button>
           </div>
         </div>
       </div>

@@ -10,7 +10,14 @@
 
 .c-checkbox input {
   /* 💡 We shouldn't use display:none, right? */
-  display: none;
+  /* display: none; */
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 /* ------- CASE #3 Toggle content -------  */
@@ -19,11 +26,13 @@
   /* 💡 It's visually hidden, but we need to hide it completely  */
   opacity: 0;
   padding: 16px 0 0 16px;
-  transition: opacity 250ms;
+  visibility: hidden;
+  transition: opacity 250ms, visibility 250ms;
 }
 
 .coolText.isVisible {
   opacity: 1;
+  visibility: visible;
 }
 
 /*  ----------------------------------------- *\

@@ -11,6 +11,19 @@
   --theme-success: green;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-text_0: hsl(0deg 0% 89%);
+    --theme-text_1: hsl(0deg 0% 68%);
+    --theme-bg_0: hsl(280deg 3% 23%);
+    --theme-bg_1: hsl(288deg 6% 17%);
+    --theme-primary: hsl(180deg 100% 45%);
+    --theme-primary_smooth: hsl(180deg 100% 19%);
+    --theme-secondary: hsl(26deg 100% 68%);
+    --theme-success: greenyellow;
+  }
+}
+
 html {
   /* 💡 Change font-size so that 1rem = 10px */
 }
@@ -22,8 +35,8 @@ body {
   box-sizing: border-box;
   font-weight: 400;
   /* 💡 Here's the first fixed unit to convert */
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 1rem;
+  line-height: 1.25rem;
 }
 
 body * {
@@ -56,23 +69,23 @@ body * {
 
 .tag {
   /* 💡 Does this color respects AA level? */
-  color: var(--theme-secondary);
+  color: var(--theme-primary);
   margin-bottom: 4px;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
-  line-height: 14px;
+  line-height: 0.875rem;
 }
 
 .title-xl {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 600;
-  line-height: 33.6px;
+  line-height: 2.5rem;
   margin: 0 0 8px;
 }
 
 .title-md {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   margin: 32px 0 8px;
   line-height: 21.6px;
@@ -100,7 +113,7 @@ body * {
   To meet WCAG 1.4.1 (Use of color), color cannot be
   used as the only way to give meaning... The shape must
   be different too. Here you can use "✓" instead.  */
-  content: "●";
+  content: "✓";
   color: var(--theme-success);
   font-family: sans-serif;
 }
@@ -122,18 +135,18 @@ body * {
 
 .note {
   margin: -16px 0 24px;
-  font-size: 14px;
+  font-size: 0.875rem;
   text-align: center;
   /* 💡 This color doesn't work well with bg_1.
   You can change the color value or create a new one */
-  color: var(--theme-text_1);
+  color: var(--theme-text_0);
 }
 
 .btnBell {
   display: flex;
   align-items: center;
   min-height: 35px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   border: none;
   border-radius: 3px;
@@ -159,6 +172,12 @@ body * {
   animation: shake 3s infinite;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .btnBell, .btnBell-svg {
+    animation: none;
+  }
+}
+
 .footer {
   position: absolute;
   width: 100%;
@@ -182,7 +201,7 @@ body * {
   position: relative;
   text-align: center;
   margin: 0;
-  font-size: 13px;
+  font-size: 0.75rem;
   /** 🍀 Some A11Y debug tools might mark this as color contrast issue.
   It's a false positive caused by the ::before pseudo-element above */
   color: var(--theme-bg_0);
